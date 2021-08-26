@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme)=>({
 }))
 const columns = [
     {id: 'postid', label: 'Post Id', minWidth: 170, fontWeight:'bold', backgroundColor:'white', color: '#2d3667', align:'center'},
-    {id: 'postid', label: 'Post Title', minWidth: 170, fontWeight:'bold', backgroundColor:'white', color: '#2d3667'},
-  
+    {id: 'postid', label: 'Post Title', minWidth: 170, fontWeight:'bold', backgroundColor:'white', color: '#2d3667',align:'center'},
+    {id: 'postid', label: 'User Id', minWidth: 170, fontWeight:'bold', backgroundColor:'white', color: '#2d3667',align:'center'},
     
     // {id: 'topicfile', label: 'Topic File', minWidth: 170, fontWeight:'bold', backgroundColor:'white', color: '#2d3667'},
     // {id: 'action', label: 'Action', minWidth: 170, fontWeight:'bold', backgroundColor:'white', color: '#2d3667'},
@@ -45,7 +45,7 @@ function PostView() {
     console.log(post)
     //console.log(post?.filter((data)=> user?.map(e=>e.id).includes(data.userId)))
     //console.log(user?.filter((data)=> post?.map(e=>e.userId).includes(data.id)).map(el=>el.username))
-    //console.log(user)
+    console.log(user)
     const query = (rows) => {
         const columns = ["title"]
         return rows?.filter(row =>
@@ -120,7 +120,8 @@ function PostView() {
                         <TableRow key={index}>
                             
                             <TableCell align="center">{element.id}</TableCell>
-                            <TableCell className={classes.fontcolor} component={Link} to={{pathname:`/postDetails/${element.id}`, state:{userId:element.userId}}}>{element.title}</TableCell>
+                            <TableCell align="center" className={classes.fontcolor} component={Link} to={{pathname:`/postDetails/${element.id}`, state:{userId:element.userId}}}>{element.title}</TableCell>
+                            <TableCell align="center"component={Link} to={{pathname:`/userDetails/${element.id}`, state:{userId:element.userId}}}>{element.userId}</TableCell>
                         </TableRow>
                     )):<div className={classes.nodata}><p>No Record Found</p></div>}
                 </TableBody>

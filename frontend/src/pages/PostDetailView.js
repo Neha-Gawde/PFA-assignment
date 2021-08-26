@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { Grid, makeStyles, Paper } from '@material-ui/core';
 import { onGeIndividualUser, onGetUser } from '../redux/Users/userAction';
 import { onGetIndividualPost, onGetPost } from '../redux/PostView/postAction';
 import { onGetIndividualPostComments } from '../redux/Comments/commentsAction';
+import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme)=>({
     paper:{
         
@@ -37,9 +39,23 @@ function PostDetailView(props) {
     console.log(post)
     console.log(user)
     console.log(postcomments)
+    const handleClick = () =>{
+        let path = "/"
+        props.history.push(path)
+    }
     return (
         <div>
-            <h3><strong>Post Details</strong></h3>
+            <Grid container spacing={3}>
+                <Grid item xs={2} sm={2} lg={2}>
+                    <ArrowBackIosIcon onClick={handleClick}> </ArrowBackIosIcon>
+                </Grid>
+                <Grid item xs={1} sm={1} lg={1}>
+                 
+                </Grid>
+                <Grid item xs={6} sm={6} lg={6}>
+                    <h3><strong>Post Details</strong></h3>
+                </Grid>
+            </Grid>
             <Paper className={classes.paper}>
                 <Grid container spacing={3}>
                     <Grid item xs={3} lg={3}>

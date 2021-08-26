@@ -15,6 +15,7 @@ const outertheme = createTheme({
 
 const PostView = lazy(()=> import('../pages/PostView'))
 const PostDetails = lazy(()=> import('../pages/PostDetailView'))
+const UserDetails = lazy(()=> import('../pages/UserDetails'))
 const AdminRoutes = withRouter(({location})=>{
     
     return (
@@ -24,6 +25,7 @@ const AdminRoutes = withRouter(({location})=>{
             <Switch>
               <Route exact path="/" component={PostView}></Route>
               <Route exact path="/postDetails/:id" component={PostDetails}></Route>
+              <Route exact path="/userDetails/:id" component={UserDetails}></Route>
             </Switch>
           </Suspense>
         </Router>
