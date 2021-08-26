@@ -16,6 +16,14 @@ const postReducer = (state=initialState, action)=>{
                 loading:false,  
                 
             }
+        case "ON_GET_INDIVIDUAL_POST_SUCCESS":
+            return{
+                
+                ...state,
+                post:action.payload,
+                loading:false,  
+                
+            }
         default:{
             return{
                 ...state

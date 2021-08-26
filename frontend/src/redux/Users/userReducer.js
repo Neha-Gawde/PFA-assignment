@@ -16,6 +16,14 @@ const userReducer = (state=initialState, action)=>{
                 loading:false,  
                 
             }
+        case "ON_GET_INDIVIDUAL_USER_SUCCESS":
+            return{
+                
+                ...state,
+                user:action.payload,
+                loading:false,  
+                
+            }
         default:{
             return{
                 ...state

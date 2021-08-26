@@ -4,6 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import { useDispatch, useSelector } from 'react-redux'
 import { onGetPost } from '../redux/PostView/postAction'
 import { onGetUser } from '../redux/Users/userAction'
+import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme)=>({
     paper:{
         
@@ -119,7 +120,7 @@ function PostView() {
                         <TableRow key={index}>
                             
                             <TableCell align="center">{element.id}</TableCell>
-                            <TableCell className={classes.fontcolor}>{element.title}</TableCell>
+                            <TableCell className={classes.fontcolor} component={Link} to={{pathname:`/postDetails/${element.id}`, state:{userId:element.userId}}}>{element.title}</TableCell>
                         </TableRow>
                     )):<div className={classes.nodata}><p>No Record Found</p></div>}
                 </TableBody>

@@ -14,7 +14,7 @@ const outertheme = createTheme({
 
 
 const PostView = lazy(()=> import('../pages/PostView'))
-
+const PostDetails = lazy(()=> import('../pages/PostDetailView'))
 const AdminRoutes = withRouter(({location})=>{
     
     return (
@@ -23,6 +23,7 @@ const AdminRoutes = withRouter(({location})=>{
           <Suspense fallback={<div><CircularProgress/></div>}>
             <Switch>
               <Route exact path="/" component={PostView}></Route>
+              <Route exact path="/postDetails/:id" component={PostDetails}></Route>
             </Switch>
           </Suspense>
         </Router>
