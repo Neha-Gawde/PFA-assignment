@@ -24,6 +24,7 @@ const postReducer = (state=initialState, action)=>{
                 loading:false,  
                 
             }
+
         default:{
             return{
                 ...state

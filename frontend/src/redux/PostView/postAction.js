@@ -1,4 +1,4 @@
-import { BASE_URL, POST } from '../../services/APIEndpoints';
+import { BASE_URL, COMMENTS, POST } from '../../services/APIEndpoints';
 import { APIServices } from '../../services/APIServices';
 import cogoToast from 'cogo-toast';
 
@@ -35,6 +35,8 @@ export const onGetIndividualPost = (id)=>{
 
 }
 
+
+
 export const onGetPostSuccess = (data)=>{
     return{
         type:"ON_GETPOST_SUCCESS",
@@ -47,4 +49,5 @@ export const onGetIndividualPostSuccess = (data)=>{
         payload:data
     }
 }
+
 
